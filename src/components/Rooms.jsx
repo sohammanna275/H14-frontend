@@ -179,9 +179,9 @@
                                 const allocations = roomsData
                                     .filter(r => r.floorNo && r.roomNo) // only allocated rooms
                                     .map(r => ({
-                                        studentID: r.studentID,
-                                        floorID: r.floorNo,
-                                        roomID: r.roomNo
+                                        studentID: Number(r.studentID),
+                                        floorID: Number(r.floorNo),
+                                        roomID: Number(r.roomNo)
                                     }));
                                     console.log("Allocations to send:", allocations);
                                 if (allocations.length === 0) {
