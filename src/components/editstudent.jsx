@@ -10,7 +10,7 @@ const EditStudent = () => {
     useEffect(() => {
         const fetchDepartments = async () => {
             try {
-                const res = await API.get("api/departments");
+                const res = await API.get("/api/departments");
                 setDepartments(res.data);
             } catch (err) {
                 console.error("Failed to load departments", err);
