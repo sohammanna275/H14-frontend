@@ -1,19 +1,33 @@
 // eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from "framer-motion";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const EagleIntro = ({ onComplete, autoStart = true }) => {
   const [showIntro, setShowIntro] = useState(autoStart);
 
-  useEffect(() => {
-    if (!showIntro) return;
-    const timer = setTimeout(() => {
-      setShowIntro(false);
-      setTimeout(onComplete, 500);
-    }, 3500);
-    return () => clearTimeout(timer);
-  }, [onComplete, showIntro]);
+  const hasCompleted = useRef(false);
+  const hideTimerRef = useRef(null);
+  const completeTimerRef = useRef(null);
 
+  useEffect(() => {
+    if (!showIntro || hasCompleted.current) return;
+
+    hideTimerRef.current = setTimeout(() => {
+      setShowIntro(false);
+
+      completeTimerRef.current = setTimeout(() => {
+        if (!hasCompleted.current) {
+          hasCompleted.current = true;
+          onComplete(); // ✅ guaranteed ONCE
+        }
+      }, 500);
+    }, 3500);
+
+    return () => {
+      clearTimeout(hideTimerRef.current);
+      clearTimeout(completeTimerRef.current);
+    };
+  }, [onComplete, showIntro]);
   return (
     <AnimatePresence>
       {showIntro && (
