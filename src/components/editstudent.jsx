@@ -6,6 +6,7 @@ const EditStudent = () => {
     const { state } = useLocation();
     const navigate = useNavigate();
     const { id } = useParams();
+    
     const [departments, setDepartments] = useState([]);
     useEffect(() => {
         const fetchDepartments = async () => {
@@ -15,7 +16,11 @@ const EditStudent = () => {
                         Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
                     },
                 });
-                setDepartments(res.data);
+                const deptData = Array.isArray(res.data)
+                    ? res.data
+                    : res.data?.data || [];
+
+                setDepartments(deptData);
             } catch (err) {
                 console.error("Failed to load departments", err);
             }
