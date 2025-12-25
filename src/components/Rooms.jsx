@@ -133,7 +133,7 @@
                                         disabled={!roomOptions[row.studentID] || roomOptions[row.studentID].length === 0}
                                         value={row.roomNo ?? ""}
                                         onChange={(e) => {
-                                            const newRoom = e.target.value;
+                                            const newRoom = Number(e.target.value);
 
                                             setRoomsData((prev) =>
                                                 prev.map((r) =>
@@ -149,7 +149,7 @@
                                         {roomOptions[row.studentID]?.map((room) => (
                                             <option
                                                 key={room.hostelRoomID}
-                                                value={String(room.hostelRoomID)}
+                                                value={room.hostelRoomID}
                                             >
                                                 {room.roomNo}
                                             </option>
@@ -183,7 +183,7 @@
                                         floorID: r.floorNo,
                                         roomID: r.roomNo
                                     }));
-
+                                    console.log("Allocations to send:", allocations);
                                 if (allocations.length === 0) {
                                     alert("No rooms selected!");
                                     return;
