@@ -1,7 +1,9 @@
 import React from "react";
 import "./LandingPage.css";
+import { useNavigate } from "react-router-dom";
 
 const LandingPage = () => {
+    const navigate = useNavigate();
     const handleExploreClick = () => {
         const section = document.getElementById("about");
         if (section) {
@@ -25,7 +27,7 @@ const LandingPage = () => {
                         <a href="#events">Events & Activities</a>
                         <button
                             className="login-btn"
-                            onClick={() => window.location.href = "/login"}
+                            onClick={() => navigate("/login")}
                         >
                             Login
                         </button>
@@ -172,7 +174,12 @@ const LandingPage = () => {
                         </div>
                     </div>
 
-                    <button className="portal-login-btn">Login to Portal</button>
+                    <button
+                        className="portal-login-btn"
+                        onClick={() => navigate("/login")}
+                    >
+                        Login to Portal
+                    </button>
                 </section>
 
 
