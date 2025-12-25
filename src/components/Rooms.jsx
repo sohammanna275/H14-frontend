@@ -13,7 +13,7 @@
                 const res = await API.get(`/api/rooms/by-floor/${floorNo}`);
                 setRoomOptions((prev) => ({
                     ...prev,
-                    [studentID]: res.data.data,
+                    [studentID]: res.data.data || [],
                 }));
             } catch (err) {
                 console.error("Error fetching Rooms Nums: ", err);
@@ -22,8 +22,8 @@
         useEffect(() => {
             API.get("/api/rooms")
                 .then((res) => {
-                    const data = res.data;
-
+                    console.log("Rooms API response:", res.data); 
+                    const data = res.data.data;
                     setRoomsData(data);
 
                     // preload roomOptions for students who already have a floor
@@ -44,9 +44,9 @@
 
         /* 🔍 Search + Floor filter */
         const filteredData = useMemo(() => {
+            if (!Array.isArray(roomsData)) return [];
             return roomsData.filter((row) => {
                 const fullName = `${row.FirstName} ${row.LastName}`.toLowerCase();
-
                 const matchesSearch =
                     fullName.includes(search.toLowerCase()) ||
                     row.enrollmentNo.toLowerCase().includes(search.toLowerCase());
@@ -188,7 +188,7 @@
                                     alert("No rooms selected!");
                                     return;
                                 }
-
+                                console.log("Allocations to send:", allocations);
                                 await API.post("/api/rooms/allocate", allocations);
 
                                 alert("Rooms allocated successfully!");
