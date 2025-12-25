@@ -13,7 +13,7 @@
                 const res = await API.get(`/api/rooms/by-floor/${floorNo}`);
                 setRoomOptions((prev) => ({
                     ...prev,
-                    [studentID]: res.data,
+                    [studentID]: res.data.data,
                 }));
             } catch (err) {
                 console.error("Error fetching Rooms Nums: ", err);
@@ -106,7 +106,7 @@
                                         className="floor-select"
                                         value={row.floorNo ?? ""}
                                         onChange={(e) => {
-                                            const newFloor = e.target.value;
+                                            const newFloor = Number(e.target.value);
 
                                             // update roomsData
                                             setRoomsData((prev) =>
@@ -130,7 +130,7 @@
                                 <td>
                                     <select
                                         className="room-select"
-                                        disabled={!roomOptions[row.studentID]}
+                                        disabled={!roomOptions[row.studentID] || roomOptions[row.studentID].length === 0}
                                         value={row.roomNo ?? ""}
                                         onChange={(e) => {
                                             const newRoom = e.target.value;
@@ -149,7 +149,7 @@
                                         {roomOptions[row.studentID]?.map((room) => (
                                             <option
                                                 key={room.hostelRoomID}
-                                                value={room.hostelRoomID}
+                                                value={String(room.hostelRoomID)}
                                             >
                                                 {room.roomNo}
                                             </option>
