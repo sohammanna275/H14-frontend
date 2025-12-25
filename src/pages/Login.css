@@ -1,0 +1,181 @@
+/* Page background */
+.login-page {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #0f3b26, #08110a);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Login Card */
+.login-card {
+  width: 420px;
+  background: rgba(10, 26, 15, 0.85);
+  border-radius: 20px;
+  padding: 3rem 2.5rem;
+  box-shadow: 0 25px 60px rgba(0, 255, 156, 0.15);
+  border: 1px solid rgba(0, 255, 156, 0.2);
+  text-align: center;
+}
+
+/* Title & Subtitle */
+.login-title {
+  font-size: 2.4rem;
+  color: #d8ffe8;
+  margin-bottom: 0.3rem;
+}
+
+.login-subtitle {
+  color: #9fe6c3;
+  font-size: 0.95rem;
+  margin-bottom: 2rem;
+}
+
+/* Role Selection Buttons (for split login) */
+.role-toggle {
+  display: flex;
+  background: rgba(0, 255, 156, 0.08);
+  border-radius: 50px;
+  margin-bottom: 2rem;
+  overflow: hidden;
+}
+
+.role-toggle button {
+  flex: 1;
+  padding: 0.6rem;
+  border: none;
+  background: transparent;
+  color: #9fe6c3;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.role-toggle button.active {
+  background: #00c48c;
+  color: #08110a;
+}
+
+/* Form */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.login-form input {
+  padding: 0.9rem 1.2rem;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 255, 156, 0.3);
+  background: transparent;
+  color: #d8ffe8;
+  font-size: 0.95rem;
+  outline: none;
+}
+
+.login-form input::placeholder {
+  color: #7fbda0;
+}
+
+/* Submit Button */
+.login-submit {
+  margin-top: 1rem;
+  padding: 0.9rem;
+  background: linear-gradient(135deg, #00c48c, #00ff9c);
+  border: none;
+  border-radius: 50px;
+  font-weight: 700;
+  color: #08110a;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.login-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 255, 156, 0.4);
+}
+
+/* Back Button */
+.login-back {
+  margin-top: 1rem;
+  padding: 0.8rem;
+  background: rgba(255,255,255,0.1);
+  border: none;
+  border-radius: 50px;
+  color: #d8ffe8;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.login-back:hover {
+  background: rgba(0, 255, 156, 0.15);
+}
+
+/* Footer */
+.login-footer {
+  margin-top: 2rem;
+  font-size: 0.8rem;
+  color: #7fbda0;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .login-card {
+    width: 90%;
+    padding: 2.5rem 2rem;
+  }
+
+  .login-title {
+    font-size: 2rem;
+  }
+
+  .role-toggle button {
+    font-size: 0.9rem;
+  }
+
+  .login-form input {
+    font-size: 0.9rem;
+  }
+}
+/* Forgot Password */
+.forgot-password {
+  background: none;
+  border: none;
+  color: #00ff9c;
+  font-size: 0.85rem;
+  text-align: right;
+  cursor: pointer;
+  padding: 0;
+  margin-top: -0.5rem;
+  align-self: flex-end;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+  color: #7fffd4;
+}
+
+.password-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.password-wrapper input {
+  width: 100%;
+  padding-right: 3rem;
+}
+
+.eye-icon {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #9fe6c3;
+  font-size: 1.2rem;
+}
+
+.eye-icon:hover {
+  color: #00ff9c;
+}

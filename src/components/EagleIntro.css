@@ -1,0 +1,44 @@
+.intro-container {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+background-color:#0b220b !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  background-color: #22c55e;
+  border-radius: 50%;
+}
+
+.intro-text {
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  background: linear-gradient(135deg, #4ade80 0%, #22c55e 50%, #16a34a 100%);
+  -webkit-background-clip: text; /* Chrome, Safari */
+  -webkit-text-fill-color: transparent; /* Chrome, Safari */
+  background-clip: text; /* standard, but mostly ignored */
+  text-shadow: 0 0 40px rgba(74, 222, 128, 0.3);
+}
+
+
+.intro-subtext {
+  color: rgba(132, 211, 132, 0.8);
+  margin-top: 0.5rem;
+  font-size: 1.25rem;
+  letter-spacing: 0.1em;
+}
+
+@media (min-width: 768px) {
+  .intro-text {
+    font-size: 4rem;
+  }
+  .intro-subtext {
+    font-size: 1.5rem;
+  }
+}

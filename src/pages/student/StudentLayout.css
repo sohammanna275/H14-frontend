@@ -1,0 +1,242 @@
+/* ROOT */
+.student-dashboard {
+  display: flex;
+  min-height: 100vh;
+  background-color: #0a1a0f;
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+}
+
+/* SIDEBAR */
+.student-sidebar {
+  width: 260px;
+  background: linear-gradient(180deg, #08110a, #0a1a0f);
+  padding: 2rem 1.5rem;
+  box-shadow: 4px 0 20px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+}
+
+/* TITLE */
+.student-title {
+  color: #00ff9c;
+  font-size: 1.4rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-weight: 700;
+}
+
+/* MENU */
+.student-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+/* LINKS */
+.student-link {
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #a3d9b0;
+  font-weight: 500;
+  transition: all 0.25s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* HOVER */
+.student-link:hover {
+  background-color: rgba(0, 255, 156, 0.15);
+  color: #00ff9c;
+  transform: translateX(4px);
+}
+
+/* ACTIVE LINK */
+.student-link.active {
+  background-color: #00c48c;
+  color: #0a1a0f;
+  font-weight: 600;
+}
+
+/* CONTENT */
+.student-content {
+  flex: 1;
+  padding: 2.5rem;
+  overflow-y: auto;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .student-sidebar {
+    width: 200px;
+    padding: 1.5rem 1rem;
+  }
+
+  .student-title {
+    font-size: 1.2rem;
+  }
+
+  .student-content {
+    padding: 1.5rem;
+  }
+}
+/* DASHBOARD HOME */
+.student-dashboard-home {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* TOP CARDS */
+.student-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.student-card {
+  background: linear-gradient(145deg, #0d2a1b, #08140d);
+  border-radius: 18px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 30px rgba(0, 255, 156, 0.08);
+  border: 1px solid rgba(0, 255, 156, 0.15);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.student-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0, 255, 156, 0.18);
+}
+
+.student-card h4 {
+  color: #7fffd4;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+}
+
+.card-value {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #00ff9c;
+}
+
+.card-subtext {
+  font-size: 0.85rem;
+  color: #9acfb5;
+}
+
+/* PANEL */
+.student-panel {
+  background: linear-gradient(180deg, #0a2417, #08140d);
+  border-radius: 22px;
+  padding: 2rem;
+  border: 1px solid rgba(0, 255, 156, 0.15);
+}
+
+.student-panel h3 {
+  color: #7fffd4;
+  margin-bottom: 1.5rem;
+}
+
+/* EMPTY STATE */
+.empty-state {
+  text-align: center;
+  padding: 3rem 0;
+  color: #9acfb5;
+}
+
+.rupee-icon {
+  font-size: 3rem;
+  display: block;
+  color: rgba(0, 255, 156, 0.3);
+  margin-bottom: 0.5rem;
+}
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.logout-btn {
+  background-color: transparent;
+  border: 1px solid #e74c3c;
+  color: #e74c3c;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+  background-color: #e74c3c;
+  color: white;
+}
+
+/* ---------- Leave Requests Panel & Table ---------- */
+.student-panel .leave-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.student-panel .leave-table th,
+.student-panel .leave-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid rgba(0, 255, 156, 0.2);
+  color: #a3d9b0;
+}
+
+.student-panel .leave-table th {
+  background-color: rgba(0, 255, 156, 0.1);
+  color: #00ff9c;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+.student-panel .leave-table tbody tr:hover {
+  background-color: rgba(0, 255, 156, 0.05);
+}
+
+.student-panel .leave-table td {
+  font-size: 0.85rem;
+}
+
+/* Status badges */
+.student-panel .leave-table td.status {
+  font-weight: 600;
+  padding: 6px 10px;
+  border-radius: 12px;
+  text-align: center;
+  width: 100px;
+}
+
+.student-panel .leave-table td.status.Pending {
+  background-color: rgba(255, 165, 0, 0.2);
+  color: #ffa500;
+}
+
+.student-panel .leave-table td.status.Approved {
+  background-color: rgba(0, 255, 156, 0.2);
+  color: #00ff9c;
+}
+
+/* Error message */
+.student-panel .error {
+  color: #ff4d4f;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+/* Loading and empty state */
+.student-panel p {
+  color: #9acfb5;
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 1rem 0;
+}
