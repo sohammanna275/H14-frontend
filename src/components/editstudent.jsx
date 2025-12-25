@@ -10,7 +10,11 @@ const EditStudent = () => {
     useEffect(() => {
         const fetchDepartments = async () => {
             try {
-                const res = await API.get("/api/departments");
+                const res = await API.get("/api/departments", {
+                    headers: {
+                        Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+                    },
+                });
                 setDepartments(res.data);
             } catch (err) {
                 console.error("Failed to load departments", err);
@@ -214,11 +218,15 @@ const EditStudent = () => {
                                 required
                             >
                                 <option value="">Select Department</option>
-                                {departments.map((dept) => (
-                                    <option key={dept.deptNo} value={dept.deptNo}>
-                                        {dept.deptName}
-                                    </option>
-                                ))}
+                                {departments.length === 0 ? (
+                                    <option disabled>Loading...</option>
+                                ) : (
+                                    departments.map((dept) => (
+                                        <option key={dept.deptNo} value={dept.deptNo}>
+                                            {dept.deptName}
+                                        </option>
+                                    ))
+                                )}
                             </select>
                         </div>
                         {/* Medical Condition */}
