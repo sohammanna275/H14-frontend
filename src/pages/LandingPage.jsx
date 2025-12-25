@@ -53,7 +53,7 @@ const LandingPage = () => {
                     <div className="about-content">
                         {/* LEFT IMAGE */}
                         <div className="about-image">
-                            <img src="/hostel14.jpeg" alt="Hostel 14 Building" />
+                            <img src="/Hostel14.jpeg" alt="Hostel 14 Building" />
                             <div className="image-overlay"></div>
                         </div>
 
