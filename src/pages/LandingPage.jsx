@@ -10,7 +10,13 @@ const LandingPage = () => {
             section.scrollIntoView({ behavior: "smooth" });
         }
     };
-
+const images = [
+                "/pic1.jpg",
+                "/pic2.jpg",
+                //   "/h14-3.jpg",
+                //   "/h14-4.jpg",
+                //   "/h14-5.jpg",
+                ];
     return (
         <div className="bg-particles">
             <div className="landing-container">
@@ -40,7 +46,7 @@ const LandingPage = () => {
                         Welcome to <br />
                         <span>Hostel - 14</span>
                     </h1>
-                    <p className="landing-subtitle">Fly Above ALL</p>
+                    <p className="landing-subtitle">Fly Above All</p>
                     <button className="explore-btn" onClick={handleExploreClick}>
                         Explore Now
                     </button>
@@ -89,6 +95,15 @@ const LandingPage = () => {
                         </div>
                     </div>
                 </section>
+
+                {/* Warden's message */}
+                <section className="warden-message-section">
+                    <h2>Warden's Message</h2>
+                    <p>
+                        Welcome to Hostel 14!
+                    </p>
+                </section>
+
 
                 {/* Facilities Section */}
                 <section id="facilities" className="facilities-section">
@@ -193,14 +208,14 @@ const LandingPage = () => {
 
                     <div className="events-container">
                         <div className="event-card">
-                            <span className="event-badge">Coming Soon</span>
+                            <span className="event-badge">16th Jan - 18th Jan</span>
 
                             <div className="event-icon">🏆</div>
 
                             <h3 className="event-title">Freshers Cricket League</h3>
 
-                            <button className="event-register-btn" 
-                            onClick={() => navigate("/register")}>
+                            <button className="event-register-btn"
+                                onClick={() => navigate("/register")}>
                                 Register</button>
 
                             <p className="event-desc">
@@ -208,6 +223,18 @@ const LandingPage = () => {
                             </p>
                         </div>
                     </div>
+                </section>
+                
+                <section className="hostel-gallery-section section">
+                    <h2>Moments from Hostel 14</h2>
+                    <div className="hostel-gallery-grid">
+                        {images.map((img, idx) => (
+                            <div className="hostel-gallery-card" key={idx}>
+                                <img src={img} alt={`Hostel 14 moment ${idx + 1}`} />
+                            </div>
+                        ))}
+                    </div>
+                    
                 </section>
             </div>
         </div>
