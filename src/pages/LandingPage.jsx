@@ -198,6 +198,11 @@ const LandingPage = () => {
                             <div className="event-icon">🏆</div>
 
                             <h3 className="event-title">Freshers Cricket League</h3>
+
+                            <button className="event-register-btn" 
+                            onClick={() => navigate("/register")}>
+                                Register</button>
+
                             <p className="event-desc">
                                 Freshers Cricket Tournament — Where The Best Thrives
                             </p>

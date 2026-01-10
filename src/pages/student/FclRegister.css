@@ -1,0 +1,120 @@
+/* PAGE WRAPPER */
+.fcl-register-page {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #0b220b, #08110a);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 1.5rem 3rem;
+  color: #ffffff;
+}
+
+/* CARD */
+.fcl-register-card {
+  width: 100%;
+  max-width: 520px;
+  background: rgba(0, 196, 140, 0.08);
+  border: 1px solid rgba(0, 255, 156, 0.25);
+  border-radius: 24px;
+  padding: 3rem 2.5rem;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 30px 60px rgba(0, 255, 156, 0.12);
+}
+
+/* TITLE */
+.fcl-register-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #00ff9c;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.fcl-register-subtitle {
+  text-align: center;
+  color: #9fe6c3;
+  font-size: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+/* MESSAGE */
+.fcl-message {
+  text-align: center;
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+  color: #6beec9;
+}
+
+/* FORM */
+.fcl-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+/* INPUTS & SELECTS */
+.fcl-form input,
+.fcl-form select {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border-radius: 14px;
+  border: 1px solid rgba(0, 255, 156, 0.25);
+  background: rgba(8, 17, 10, 0.85);
+  color: #e6fff3;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+.fcl-form input::placeholder {
+  color: #7fcfb1;
+}
+
+.fcl-form select {
+  cursor: pointer;
+}
+
+/* FOCUS STATE */
+.fcl-form input:focus,
+.fcl-form select:focus {
+  border-color: #00ff9c;
+  box-shadow: 0 0 0 2px rgba(0, 255, 156, 0.2);
+}
+
+/* BUTTON */
+.fcl-submit-btn {
+  margin-top: 1.5rem;
+  padding: 0.9rem 2.5rem;
+  background: #00c48c;
+  color: #0a1a0f;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+}
+
+.fcl-submit-btn:hover {
+  background: #00ff9c;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 255, 156, 0.35);
+}
+
+.fcl-submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* RESPONSIVE */
+@media (max-width: 480px) {
+  .fcl-register-card {
+    padding: 2.2rem 1.8rem;
+  }
+
+  .fcl-register-title {
+    font-size: 1.9rem;
+  }
+}
