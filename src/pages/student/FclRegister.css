@@ -1,5 +1,5 @@
 /* PAGE WRAPPER */
-.fcl-register-page {
+/* .fcl-register-page {
   min-height: 100vh;
   background: radial-gradient(circle at top, #0b220b, #08110a);
   display: flex;
@@ -7,7 +7,23 @@
   justify-content: center;
   padding: 6rem 1.5rem 3rem;
   color: #ffffff;
+} */
+
+/* PAGE WRAPPER */
+.fcl-register-page {
+  min-height: 100vh;
+  background-image: url('/lords.jpg'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 1.5rem 3rem;
+  color: #ffffff;
 }
+
 
 /* CARD */
 .fcl-register-card {
@@ -117,4 +133,20 @@
   .fcl-register-title {
     font-size: 1.9rem;
   }
+}
+.fcl-register-page {
+  position: relative;
+}
+
+.fcl-register-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 0;
+}
+
+.fcl-register-card {
+  position: relative;
+  z-index: 1;
 }

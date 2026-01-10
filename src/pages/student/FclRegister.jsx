@@ -59,7 +59,7 @@ const FclRegister = () => {
         <div className="fcl-register-page">
             <div className="fcl-register-card">
                 <h2 className="fcl-register-title">
-                    Fresher Cricket League
+                    Freshers Cricket League
                 </h2>
                 <p className="fcl-register-subtitle">
                     Register yourself for FCL 2026
