@@ -144,6 +144,7 @@ const FclRegister = () => {
                         <option value="AllRounder">All Rounder</option>
                     </select>
 
+
                     <button
                         className="fcl-submit-btn"
                         type="submit"
