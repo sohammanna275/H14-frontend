@@ -107,7 +107,7 @@ const App = () => {
 
   return (
     <BrowserRouter>
-      {/* ✅ Intro overlay */}
+      
       {showIntro && (
         <EagleIntro
           autoStart
@@ -115,7 +115,7 @@ const App = () => {
         />
       )}
 
-      {/* ✅ Routes must ALWAYS be mounted */}
+      
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/login" element={<Login />} />

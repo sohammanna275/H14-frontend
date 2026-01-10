@@ -197,9 +197,9 @@ const LandingPage = () => {
 
                             <div className="event-icon">🏆</div>
 
-                            <h3 className="event-title">Freshers Champions League</h3>
+                            <h3 className="event-title">Freshers Cricket League</h3>
                             <p className="event-desc">
-                                Freshers Sports Tournament — Where The Best Thrives
+                                Freshers Cricket Tournament — Where The Best Thrives
                             </p>
                         </div>
                     </div>
