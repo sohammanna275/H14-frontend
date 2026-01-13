@@ -728,7 +728,79 @@ section {
   font-family: 'Poppins', sans-serif;
 }
 
-/* Overall background */
-body, html {
-  height: 100%;
+.facilities-slider {
+  height: 100vh;
+  width: 100vw;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  transition: background-image 1s ease-in-out;
+}
+
+/* LIGHT overlay */
+.facilities-slider .overlay {
+  position: absolute;
+  inset: 0;
+  
+}
+
+.facilities-section {
+  padding: 0;   /* remove global section padding */
+}
+/* ARROWS */
+.slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.45);
+  color: #00ff9c;
+  border: none;
+  font-size: 2.2rem;
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 5;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.slider-arrow:hover {
+  background: rgba(0, 0, 0, 0.7);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.slider-arrow.left {
+  left: 20px;
+}
+
+.slider-arrow.right {
+  right: 20px;
+}
+
+/* DOTS */
+.slider-dots {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 5;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.dot:hover {
+  transform: scale(1.2);
+}
+
+.dot.active {
+  background: #00ff9c;
 }

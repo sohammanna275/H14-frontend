@@ -1,7 +1,15 @@
 import React from "react";
+import { useEffect, useState } from "react";
 import "./LandingPage.css";
 import { useNavigate } from "react-router-dom";
-
+const images = [
+    "/pic1.jpg",
+    "/pic2.jpg",
+    //   "/h14-3.jpg",
+    //   "/h14-4.jpg",
+    //   "/h14-5.jpg",
+];
+const images2 = ["/pic4.jpeg", "/pic5.jpeg", "/pic6.jpeg", "/pic7.jpeg"];
 const LandingPage = () => {
     const navigate = useNavigate();
     const handleExploreClick = () => {
@@ -10,16 +18,37 @@ const LandingPage = () => {
             section.scrollIntoView({ behavior: "smooth" });
         }
     };
-const images = [
-                "/pic1.jpg",
-                "/pic2.jpg",
-                //   "/h14-3.jpg",
-                //   "/h14-4.jpg",
-                //   "/h14-5.jpg",
-                ];
+
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const nextSlide = () => {
+        setCurrentIndex((prev) =>
+            prev === images2.length - 1 ? 0 : prev + 1
+        );
+    };
+
+    const prevSlide = () => {
+        setCurrentIndex((prev) =>
+            prev === 0 ? images2.length - 1 : prev - 1
+        );
+    };
+
+    const goToSlide = (index) => {
+        setCurrentIndex(index);
+    };
+
+    // Auto slide every 4 seconds
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentIndex((prev) =>
+                prev === images2.length - 1 ? 0 : prev + 1
+            );
+        }, 4000);
+        return () => clearInterval(interval);
+    }, []);
     return (
         <div className="bg-particles">
             <div className="landing-container">
+
                 {/* Header */}
                 <header className="landing-header">
                     <div className="logo">
@@ -106,14 +135,53 @@ const images = [
 
 
                 {/* Facilities Section */}
+
                 <section id="facilities" className="facilities-section">
                     <h2 className="facilities-title">Our Facilities</h2>
                     <div className="facilities-underline"></div>
                     <p className="facilities-subtitle">
                         State-of-the-art amenities designed for your comfort and convenience
                     </p>
+                    {/* <section
+                        className="facilities-slider"
+                        style={{
+                            backgroundImage: `url(${images2[currentIndex]})`,
+                        }}
+                    >
+                        <div className="overlay"></div>
 
-                    <div className="facilities-grid">
+                    </section> */}
+                    <div
+                        className="facilities-slider"
+                        style={{
+                            backgroundImage: `url(${images2[currentIndex]})`,
+                        }}
+                    >
+                        <div className="overlay"></div>
+
+                        {/* LEFT ARROW */}
+                        <button className="slider-arrow left" onClick={prevSlide}>
+                            ❮
+                        </button>
+
+                        {/* RIGHT ARROW */}
+                        <button className="slider-arrow right" onClick={nextSlide}>
+                            ❯
+                        </button>
+
+                        {/* DOTS */}
+                        <div className="slider-dots">
+                            {images2.map((_, index) => (
+                                <span
+                                    key={index}
+                                    className={`dot ${index === currentIndex ? "active" : ""}`}
+                                    onClick={() => goToSlide(index)}
+                                />
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* <div className="facilities-grid">
                         <div className="facility-card">
                             <div className="facility-icon">🏢</div>
                             <h3>Modern Rooms</h3>
@@ -143,7 +211,7 @@ const images = [
                             <h3>24/7 Security</h3>
                             <p>Round-the-clock security and CCTV surveillance</p>
                         </div>
-                    </div>
+                    </div> */}
                 </section>
 
                 {/* Student Portal Section */}
@@ -224,7 +292,7 @@ const images = [
                         </div>
                     </div>
                 </section>
-                
+
                 <section className="hostel-gallery-section section">
                     <h2>Moments from Hostel 14</h2>
                     <div className="hostel-gallery-grid">
@@ -234,7 +302,7 @@ const images = [
                             </div>
                         ))}
                     </div>
-                    
+
                 </section>
             </div>
         </div>
