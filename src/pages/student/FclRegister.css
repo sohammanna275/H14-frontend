@@ -150,3 +150,26 @@
   position: relative;
   z-index: 1;
 }
+/* VIDEO WRAPPER */
+.fcl-video-wrapper {
+  width: 100%;
+  border-radius: 18px;
+  overflow: hidden;
+  margin-bottom: 1.8rem;
+  box-shadow: 0 12px 30px rgba(0, 255, 156, 0.2);
+}
+
+/* VIDEO */
+.fcl-video {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  background: #000;
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+  .fcl-video {
+    height: 180px;
+  }
+}

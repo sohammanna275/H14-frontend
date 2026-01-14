@@ -58,6 +58,19 @@ const FclRegister = () => {
     return (
         <div className="fcl-register-page">
             <div className="fcl-register-card">
+                <div className="fcl-video-wrapper">
+                    <video
+                        className="fcl-video"
+                        controls
+                        muted
+                        playsInline
+                    >
+                        <source src="/fcl-intro.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+
+                
                 <h2 className="fcl-register-title">
                     Freshers Cricket League
                 </h2>
