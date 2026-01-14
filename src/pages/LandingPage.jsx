@@ -274,7 +274,8 @@ const LandingPage = () => {
                         Stay engaged with exciting events and activities throughout the year
                     </p>
 
-                    <div className="events-container">
+                    {/* <div className="events-container">
+                        
                         <div className="event-card">
                             <span className="event-badge">16th Jan - 18th Jan</span>
 
@@ -290,7 +291,28 @@ const LandingPage = () => {
                                 Freshers Cricket Tournament — Where The Best Thrives
                             </p>
                         </div>
+                    </div> */}
+                    <div className="event-video-card">
+                        <video
+                            src="/fcl-intro.mp4"
+                            autoPlay
+                            loop
+                            muted
+                            playsInline
+                            className="event-video"
+                        />
+
+                        {/* HOVER CONTENT */}
+                        <div className="event-video-hover">
+                            <button
+                                className="event-register-btn"
+                                onClick={() => navigate("/register")}
+                            >
+                                Register
+                            </button>
+                        </div>
                     </div>
+
                 </section>
 
                 <section className="hostel-gallery-section section">

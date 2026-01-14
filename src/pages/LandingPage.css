@@ -14,9 +14,6 @@ html, body {
   scroll-behavior: smooth;
 }
 
-/* =========================================
-   2. HEADER
-========================================= */
 .landing-header {
   position: fixed;
   top: 0;
@@ -135,9 +132,7 @@ html, body {
   transform: translateY(-2px);
 }
 
-/* =========================================
-   4. SECTIONS (GLOBAL)
-========================================= */
+
 section {
   padding: 7rem 6rem;
   background: linear-gradient(180deg, #08110a, #0a1a0f);
@@ -160,9 +155,7 @@ section {
   border-radius: 4px;
 }
 
-/* =========================================
-   5. ABOUT
-========================================= */
+
 .about-content {
   display: grid;
   grid-template-columns: 1.1fr 1fr;
@@ -677,7 +670,7 @@ section {
 
 .event-desc {
   font-size: 1rem;
-  color: #bdebd4;
+  color:#00ff9c;
   line-height: 1.6;
 }
 
@@ -808,7 +801,7 @@ section {
 .leave-card {
   grid-column: 1 / -1;      
   justify-self: center;      
-
+  
   width: calc(50% - 1.25rem); 
 }
 
@@ -817,4 +810,76 @@ section {
     grid-column: auto;
     width: 100%;
   }
+}
+.portal-card p {
+  color: #bdebd4; /* uniform subtitle */
+  font-weight: 400;
+}
+.portal-card h3 {
+  color: #e6fff3; /* uniform title */
+  font-weight: 600;
+}
+.portal-card p {
+  color: #00ff9c; /* same as Leave Management */
+  font-weight: 700;
+}
+/* VIDEO CARD */
+.event-video-card {
+  position: relative;
+  width: 420px;
+  height: 260px;
+  border-radius: 22px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* VIDEO */
+.event-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* HOVER OVERLAY */
+.event-video-hover {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+/* BUTTON animation */
+.event-video-hover .event-register-btn {
+  transform: translateY(20px);
+  opacity: 0;
+  transition: 0.35s ease;
+}
+
+/* HOVER TRIGGER */
+.event-video-card:hover .event-video-hover {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.event-video-card:hover .event-register-btn {
+  transform: translateY(0);
+  opacity: 1;
+}
+/* VIDEO CARD – FULL WIDTH */
+.event-video-card {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;   /* optional: keeps it elegant on large screens */
+  height: 500px;       /* increase height */
+  margin: 0 auto;      /* center horizontally */
+  border-radius: 24px;
+  overflow: hidden;
+  cursor: pointer;
 }
