@@ -139,9 +139,9 @@ const LandingPage = () => {
                 <section id="facilities" className="facilities-section">
                     <h2 className="facilities-title">Our Facilities</h2>
                     <div className="facilities-underline"></div>
-                    <p className="facilities-subtitle">
+                    {/* <p className="facilities-subtitle">
                         State-of-the-art amenities designed for your comfort and convenience
-                    </p>
+                    </p> */}
                     {/* <section
                         className="facilities-slider"
                         style={{
@@ -224,13 +224,13 @@ const LandingPage = () => {
                     </p>
 
                     <div className="portal-grid">
-                        <div className="portal-card">
+                        {/* <div className="portal-card">
                             <div className="portal-icon">🎓</div>
                             <div>
                                 <h3>Academic Records</h3>
                                 <p>View grades, attendance, and academic progress</p>
                             </div>
-                        </div>
+                        </div> */}
 
                         <div className="portal-card">
                             <div className="portal-icon">📋</div>
@@ -248,7 +248,7 @@ const LandingPage = () => {
                             </div>
                         </div>
 
-                        <div className="portal-card">
+                        <div className="portal-card leave-card">
                             <div className="portal-icon">📅</div>
                             <div>
                                 <h3>Leave Management</h3>

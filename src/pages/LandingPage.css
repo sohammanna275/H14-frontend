@@ -804,3 +804,17 @@ section {
 .dot.active {
   background: #00ff9c;
 }
+
+.leave-card {
+  grid-column: 1 / -1;      
+  justify-self: center;      
+
+  width: calc(50% - 1.25rem); 
+}
+
+@media (max-width: 900px) {
+  .leave-card {
+    grid-column: auto;
+    width: 100%;
+  }
+}
