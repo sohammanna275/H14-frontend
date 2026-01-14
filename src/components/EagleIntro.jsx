@@ -1,6 +1,37 @@
-// eslint-disable-next-line no-unused-vars
+// // eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
+
+const containerVariants = {
+  initial: { opacity: 1 },
+  exit: {
+    opacity: 1,
+    transition: { duration: 0.6 },
+  },
+};
+
+const logoVariants = {
+  initial: {
+    scale: 0.5,
+    opacity: 0,
+  },
+  animate: {
+    scale: 1,
+    opacity: 1,
+    transition: { duration: 0.8, ease: "easeOut" },
+  },
+  exit: {
+    scale: 8,                 
+    opacity: 0,
+    rotateX: 15,              
+    filter: "blur(20px)",
+    transition: {
+      duration: 0.7,
+      ease: "easeIn",
+    },
+  },
+};
+
 
 const EagleIntro = ({ onComplete, autoStart = true }) => {
   const [showIntro, setShowIntro] = useState(autoStart);
@@ -18,9 +49,9 @@ const EagleIntro = ({ onComplete, autoStart = true }) => {
       completeTimerRef.current = setTimeout(() => {
         if (!hasCompleted.current) {
           hasCompleted.current = true;
-          onComplete(); // ✅ guaranteed ONCE
+          onComplete(); 
         }
-      }, 500);
+      }, 700); 
     }, 3500);
 
     return () => {
@@ -28,23 +59,27 @@ const EagleIntro = ({ onComplete, autoStart = true }) => {
       clearTimeout(completeTimerRef.current);
     };
   }, [onComplete, showIntro]);
+
   return (
     <AnimatePresence>
       {showIntro && (
         <motion.div
           className="fixed inset-0 z-50 flex items-center justify-center bg-[#0a1f0a]"
-          initial={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.5 }}
+          variants={containerVariants}
+          initial="initial"
+          animate="initial"
+          exit="exit"
+          style={{ perspective: "1200px" }} 
         >
           <div className="relative w-screen h-screen flex flex-col items-center justify-center">
-            {/* Responsive SVG */}
+
             <motion.svg
               viewBox="0 0 200 200"
               className="block w-[50vw] max-w-[600px] h-auto"
-              initial={{ scale: 0.5, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
+              variants={logoVariants}
+              initial="initial"
+              animate="animate"
+              exit="exit"
             >
               <motion.g
                 initial={{ y: 20 }}
@@ -71,7 +106,11 @@ const EagleIntro = ({ onComplete, autoStart = true }) => {
                   strokeWidth="2"
                   initial={{ pathLength: 0 }}
                   animate={{ pathLength: 1 }}
-                  transition={{ duration: 0.8, delay: 0.8, ease: "easeInOut" }}
+                  transition={{
+                    duration: 0.8,
+                    delay: 0.8,
+                    ease: "easeInOut",
+                  }}
                 />
               </motion.g>
 
@@ -94,8 +133,6 @@ const EagleIntro = ({ onComplete, autoStart = true }) => {
                 transition={{ duration: 0.6, delay: 0.6 }}
               />
             </motion.svg>
-
-            {/* Text */}
             <motion.div
               className="mt-6 text-center"
               initial={{ opacity: 0, y: 20 }}
@@ -115,6 +152,7 @@ const EagleIntro = ({ onComplete, autoStart = true }) => {
               >
                 HOSTEL - 14
               </motion.h1>
+
               <motion.p
                 className="mt-4 text-emerald-400/80 tracking-widest"
                 style={{ fontSize: "clamp(1rem, 2vw, 2rem)" }}
@@ -125,8 +163,6 @@ const EagleIntro = ({ onComplete, autoStart = true }) => {
                 FLY ABOVE ALL
               </motion.p>
             </motion.div>
-
-            {/* Particles */}
             <motion.div
               className="absolute inset-0 pointer-events-none"
               initial={{ opacity: 0 }}
