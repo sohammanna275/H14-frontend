@@ -1,0 +1,145 @@
+/* MATCH CARD (DARK THEME) */
+.match-card {
+  width: 420px;
+  background: rgba(0, 196, 140, 0.08);
+  border: 1px solid rgba(0, 255, 156, 0.25);
+  border-radius: 22px;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 20px 40px rgba(0, 255, 156, 0.08);
+  font-family: 'Poppins', sans-serif;
+  color: #e6fff3;
+}
+
+/* HEADER */
+.match-header {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-weight: 600;
+}
+
+/* LIVE DOT */
+.live-dot {
+  color: #ff5f5f;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+/* TITLE */
+.match-title {
+  flex: 1;
+  font-size: 1.05rem;
+  color: #e6fff3;
+}
+
+/* ARROW */
+.arrow {
+  font-size: 1.6rem;
+  color: rgba(255,255,255,0.4);
+}
+
+/* VENUE */
+.match-venue {
+  font-size: 0.9rem;
+  color: #9fe6c3;
+  margin: 0.8rem 0 1.4rem;
+  line-height: 1.5;
+}
+
+/* TEAM ROW */
+.team-row {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 0.9rem;
+}
+
+/* TEAM LOGO */
+.team-row img {
+  width: 28px;
+  height: 28px;
+}
+
+/* TEAM NAME */
+.team-name {
+  flex: 1;
+  font-weight: 500;
+  font: 16px;
+  color: #fffee6;
+}
+
+/* SCORE */
+.score {
+  font-weight: 600;
+  color: #00ff9c;
+}
+
+.score small {
+  color: #9fe6c3;
+  margin-left: 6px;
+}
+
+/* YET TO BAT / MUTED */
+.muted {
+  color: rgba(255,255,255,0.55);
+  font-weight: 500;
+}
+
+/* STATUS */
+.match-status {
+  margin-top: 1.2rem;
+  font-weight: 600;
+  color: #00ff9c;
+}
+
+/* .score {
+  font-weight: 600;
+  color: #00ff9c;
+
+  min-width: 140px;      
+  text-align: right;     
+} */
+.match-card {
+  width: 420px;
+  background: rgba(0, 196, 140, 0.08);
+  border: 1px solid rgba(0, 255, 156, 0.25);
+  border-radius: 22px;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 20px 40px rgba(0, 255, 156, 0.08);
+  font-family: 'Poppins', sans-serif;
+  color: #e6fff3;
+
+  /* 👇 add these */
+  transition: 
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease,
+    background 0.35s ease;
+}
+.match-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  background: rgba(0, 196, 140, 0.12);
+  border-color: rgba(0, 255, 156, 0.6);
+  box-shadow:
+    0 30px 60px rgba(0, 255, 156, 0.18),
+    inset 0 0 0 1px rgba(0, 255, 156, 0.2);
+}
+.team-row {
+  display: grid;
+  grid-template-columns: 1fr 160px; /* name | score */
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.score {
+  text-align: right;
+  font-weight: 600;
+  color: #00ff9c;
+}
+.team-row {
+  display: grid;
+  grid-template-columns: 1fr 160px;
+  align-items: center;
+  margin-bottom: 1rem;
+}

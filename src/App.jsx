@@ -102,6 +102,7 @@ import ResetPassword from "./pages/ResetPassword.jsx";
 import StudentLeave from "./pages/student/StudentLeave.jsx";
 import AdminDashboard from "./pages/Admin/AdminDashboard.jsx";
 import FclRegister from "./pages/student/FclRegister.jsx";
+import FclMatchSchedule from "./pages/student/FclMatchSchedule.jsx";
 
 const App = () => {
   const [showIntro, setShowIntro] = useState(true);
@@ -123,6 +124,7 @@ const App = () => {
         <Route path="/register" element={<FclRegister />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/reset-password/:token" element={<ResetPassword />} />
+        <Route path="/match-schedule" element={<FclMatchSchedule />} />
 
         {/* ADMIN DASHBOARD */}
         <Route

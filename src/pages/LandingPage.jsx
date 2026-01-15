@@ -273,7 +273,7 @@ const LandingPage = () => {
                     <p className="events-subtitle">
                         Stay engaged with exciting events and activities throughout the year
                     </p>
-
+                    <button className="match-btn" onClick={() => navigate("/match-schedule")}>Match Schedule</button>
                     {/* <div className="events-container">
                         
                         <div className="event-card">
