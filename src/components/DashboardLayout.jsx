@@ -46,6 +46,24 @@ const DashboardLayout = () => {
             🛏 Room <br></br>
             Allocation
           </NavLink>
+          <NavLink
+            to="/dashboard/score-update"
+            onClick={closeSidebar}
+            className={({ isActive }) =>
+              isActive ? "menu-item active" : "menu-item"
+            }
+          >
+            Update Scores
+          </NavLink>
+          <NavLink
+            to="/dashboard/add-match"
+            onClick={closeSidebar}
+            className={({ isActive }) =>
+              isActive ? "menu-item active" : "menu-item"
+            }
+          >
+            Add Match
+          </NavLink>
         </nav>
       </aside>
 

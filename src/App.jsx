@@ -103,13 +103,15 @@ import StudentLeave from "./pages/student/StudentLeave.jsx";
 import AdminDashboard from "./pages/Admin/AdminDashboard.jsx";
 import FclRegister from "./pages/student/FclRegister.jsx";
 import FclMatchSchedule from "./pages/student/FclMatchSchedule.jsx";
+import AddMatch from "./pages/Admin/AddMatch.jsx";
+import UpdateScores from "./pages/Admin/UpdateScores.jsx";
 
 const App = () => {
   const [showIntro, setShowIntro] = useState(true);
 
   return (
     <BrowserRouter>
-      
+
       {showIntro && (
         <EagleIntro
           autoStart
@@ -117,7 +119,7 @@ const App = () => {
         />
       )}
 
-      
+
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/login" element={<Login />} />
@@ -140,6 +142,9 @@ const App = () => {
           <Route path="rooms" element={<Rooms />} />
           <Route path="students/add" element={<EditStudent />} />
           <Route path="students/edit/:id" element={<EditStudent />} />
+          <Route path="add-match" element={<AddMatch />} />
+          <Route path="score-update" element={<UpdateScores />} />
+
         </Route>
 
         {/* STUDENT DASHBOARD */}
